@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DOANCOSO.Models.Category>
+
+<h2>Categories</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th class="hover-effect">Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                <td class="hover-effect">@category.Name</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary" asp-action="Update" asp-route-id="@category.Id">Edit</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
