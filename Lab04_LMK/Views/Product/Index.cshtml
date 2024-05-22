@@ -47,12 +47,12 @@
 							}
 					</style>
 
-					<div class="col" style="text-align: center">
+					<div class="col-md-4" style="text-align: center">
 						<div class="product-card card">
 							<img src="@product.ImageUrl" alt="" class="card-img-top">
 							<div class="card-body">
 								<h5 class="card-title">@product.Name</h5>
-								<p class="card-text">@product.Price</p>
+								<p class="card-text">@product.Price.ToString("#,##0") VND</p>
 								<p class="card-text">@product.Description</p>
 								<p class="card-text">
 									@if (product.Category != null)
@@ -60,10 +60,14 @@
 										@product.Category.Name
 									}
 								</p>
-								<div class="btn-group">
+								<div class="btn-group">							
 									<a class="btn btn-primary" asp-action="Display" asp-route-id="@product.Id">View</a>
-									<a class="btn btn-primary bg-info" asp-action="Update" asp-route-id="@product.Id">Edit</a>
-									<a class="btn btn-primary bg-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+									<button type="button" class="btn btn-info">Đặt Xe</button>
+									@if (User.IsInRole("Admin"))
+									{
+										<a class="btn btn-primary bg-info" asp-action="Update" asp-route-id="@product.Id">Edit</a>
+										<a class="btn btn-primary bg-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+									}
 								</div>
 							</div>
 						</div>
@@ -94,38 +98,42 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+			<div class=" text-white p-3 rounded">
 
+				<!-- Card with an image on top -->
+				<div class="card">
+					<img src="~/images/cadilac.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card with an image on top</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div><!-- End Card with an image on top -->
+				<!-- Card with an image on bottom -->
+
+
+			</div>
+			<div class=" text-white p-3 rounded">
+
+				<!-- Card with an image on top -->
+				<div class="card">
+					<img src="~/images/cadilac.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card with an image on top</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div><!-- End Card with an image on top -->
+				<!-- Card with an image on bottom -->
+
+
+			</div>
+		</div>
+		
 
 
 
 	</div>
 </div>
 
-<div class="container mt-4">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="bg-dark text-white text-center py-4">
-				<h3>HỖ TRỢ KHÁCH HÀNG</h3>
-				<p>Mang đến một kênh mua bán xe trực tuyến hiệu quả và dễ sử dụng cho cả người mua xe và người bán xe.</p>
-			</div>
-		</div>
-
-		<div class="col-md-4">
-			<div class="bg-dark text-white text-center py-4">
-				<h3>GPMXH</h3>
-				<p> 17/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 15/01/2019.</p>
-			</div>
-		</div>
-
-		<div class="col-md-4">
-			<div class="bg-dark text-white text-center py-4">
-				<h3>Địa chỉ</h3>
-				<p>Tầng 18, Toà nhà UOA, Số 6 đường Tân Trào, Phường Tân Phú, Quận 7, Thành phố Hồ Chí Minh, Việt Nam;</p>
-			</div>
-		</div>
-	</div>
-</div>
 
 
 
